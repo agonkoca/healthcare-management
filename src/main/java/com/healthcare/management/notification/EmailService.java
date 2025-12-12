@@ -16,7 +16,8 @@ public class EmailService implements NotificationService {
 
     @Override
     public void sendNotification(String message){
-        System.out.println("Email-i eshte derguar ne adresen: " + recipientEmail + ", me mesazhin: " + message );
+        String recipient= (recipientEmail == null || recipientEmail.isBlank()) ? "[pa email te specifikuar]" : recipientEmail;
+        System.out.println("Email-i eshte derguar te: " + recipient + ", me mesazhin: " + message );
     }
 }
 

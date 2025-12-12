@@ -11,13 +11,13 @@ public class SMSService implements NotificationService {
         // Default constructor for Spring
     }
 
-    public void setReipientPhone(String phone){
+    public void setRecipientPhone(String phone){
         this.recipientPhone = phone;
     }
 
     @Override
     public void sendNotification(String message) {
-        // Basic implementation without phone number
-        System.out.println("SMS-i eshte derguar ne numrin: " + recipientPhone + ", me mesazhin: " + message);
+        String recipient = (recipientPhone == null || recipientPhone.isBlank()) ? "[pa numer te specifikuar]" : recipientPhone;
+        System.out.println("SMS-i eshte derguar te: " + recipient + ", me mesazhin: " + message);
     }
 }
